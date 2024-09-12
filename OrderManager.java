@@ -92,7 +92,9 @@ public class OrderManager {
     private int getValidIntInput() {
         while (true) {
             try {
-                return scanner.nextInt();
+                int input = scanner.nextInt();
+                scanner.nextLine();  // Consume newline
+                return input;
             } catch (InputMismatchException e) {
                 System.out.print("Invalid input. Please enter a number: ");
                 scanner.next(); // Clear invalid input
@@ -100,3 +102,4 @@ public class OrderManager {
         }
     }
 }
+
